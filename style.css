@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+.logo {
+    height: 100px;
+    width: auto;
+}
+.logo {
+    position: relative;
+    left: -10px;   /* kiri / kanan */
+    top: 2px;      /* atas / bawah */
+}
+
+body {
+    background-color: rgb(24, 18, 18);
+    color: rgb(134, 127, 127);
+    overflow: hidden; 
+}
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: antiquewhite;
+    font-weight: 600;
+    text-decoration: none;
+    animation: slideRight 1s ease forwards;
+}
+.logo {
+    width: 100px; /* adjust saiz logo */
+    cursor: pointer;
+}
+
+/* Sembunyikan checkbox */
+#video-toggle {
+    display: none;
+}
+
+/* Popup overlay */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none; /* default hidden */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Show popup bila checkbox checked */
+#video-toggle:checked + .popup {
+    display: flex;
+}
+
+/* Popup content */
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 80%;
+    position: relative;
+    text-align: center;
+}
+
+/* Video styling */
+.popup-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+.close:hover {
+    color: #000;
+}
+
+.navbar a {
+    margin-left: 30px;
+    font-size: 14px;
+    color: #e7e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: aqua;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.home-content {
+    max-width: 550px;
+}
+
+.home-content h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.home-content h3 span {
+    color: aqua;
+}
+
+.home-content h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.home-content p {
+    font-size: 15px;
+    margin: 15px 0 25px;
+}
+
+
+.home-img {
+    width: 350px;                /* saiz kotak container */
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;          /* buat bulat perfect */
+    border: 5px solid #2979ff;   /* garisan tepi biru */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px); /* efek blur / glassmorphism */
+    box-shadow: 0 0 35px rgba(41, 121, 255, 0.5); /* glow biru */
+    overflow: hidden;            /* pastikan gambar ikut radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-img:hover {
+    transform: scale(1.05);        /* efek hover zoom */
+    box-shadow: 0 0 50px rgba(41, 121, 255, 0.7);
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* cover penuh container */
+}
+
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border: 2px solid aqua;
+    border-radius: 50%;
+    color: aqua;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    transition: .4s;
+}
+
+.social-media a:hover {
+    background: aqua;
+    color: black;
+    box-shadow: 0 0 15px aqua;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: aquamarine;
+    border-radius: 40px;
+    box-shadow: 0 0 10px aquamarine;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.section-title {
+    margin-bottom: 40px; /* Tukar nilai px mengikut kesesuaian */
+}
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.education-container { 
+    padding: 20px; 
+    max-width: 900px; 
+    margin: auto; }  
+.edu-table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-bottom: 30px; 
+        background: #fff; 
+        color: #000; }
+.edu-table th, 
+.edu-table td { 
+    border: 1px solid #ddd; 
+    padding: 12px; 
+    text-align: left; 
+}
+ .edu-table th { 
+    background-color: #f4f4f4; 
+    width: 30%; }
+        
+.pdf-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00eeff; /* Warna tema cyan */
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: 0.3s;
+ }
+ .pdf-button:hover { 
+    background-color: #00b8cc; 
+    box-shadow: 0 0 10px #00eeff; }
+.section-title { 
+    margin-top: 80px; 
+    text-align: center;
+    color: #00b8cc;
+}
+.popup-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.popup-img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== EXPERIENCE CARD ===== */
+.exp-card {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Button */
+.detail-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #00eeff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.detail-btn:hover {
+    background: #00b8cc;
+    box-shadow: 0 0 10px #00eeff;
+}
+
+/* ===== POPUP ===== */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Popup box */
+.popup-content {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    margin: 120px auto;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    animation: popupFade 0.4s ease;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Animation */
+@keyframes popupFade {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+/* Tunjukkan popup bila butang ditekan */
+.popup:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.popup-img-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover; /* Supaya gambar tak penyet */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+body, html {
+    overflow-y: auto; 
+}
+.skill-page {
+    padding: 120px 10%;
+    min-height: 100vh;
+    background-color: rgb(24, 18, 18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto; /
+}
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #111;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.6);
+}
+
+/* GAMBAR */
+.skill-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* TAJUK */
+.skill-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+/* TAG LEVEL */
+.skill-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* WARNA LEVEL */
+.expert {
+    background: #c3cac6;
+    color: #000;
+}
+
+.advanced {
+    background: #ffffff;
+    color: #000000;
+}
+
+.intermediate {
+    background: #ffffff;
+    color: #000;
+}
+
+
+.experience-section {
+    position: relative; /* Parent mesti relative */
+}
+
+.experience-title {
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+.experience-page {
+    padding: 120px 10%;
+    min-height: 100vh;
+    background-color: rgb(24, 18, 18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.exp-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px aqua;
+}
+
+.exp-card h3 {
+    font-size: 26px;
+    color: aquamarine;
+    margin-bottom: 10px;
+}
+
+.exp-card p {
+    font-size: 15px;
+    margin: 5px 0;
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.portfolio-card {
+    background: #111;
+    padding: 18px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+.portfolio-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #2979ff;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+/* POPUP HIDDEN */
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* POPUP ACTIVE */
+.popup:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* POPUP CONTENT */
+.popup-content {
+    background: #111;
+    padding: 25px;
+    border-radius: 18px;
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+
+.popup-content img,
+.popup-content video {
+    width: 60%;       /* Lebar maksimum 100% popup */
+    max-width: 500px;  /* Lebar maksimum ikut kehendak */
+    height: auto;      /* Maintain aspect ratio */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* center image */
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0 10px 0;
+    position: relative;
+}
+
+.footer-bar {
+    height: 5px;
+    width: 100%;
+    background: #2979ff; /* warna bar */
+    margin-bottom: 10px;
+}
+
+
